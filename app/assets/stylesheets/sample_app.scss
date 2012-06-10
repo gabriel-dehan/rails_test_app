@@ -1,0 +1,13 @@
+@import 'bootstrap';
+
+body {
+  padding-top: 60px;
+}
+
+#sidebar {
+  @include makeColumn(3);
+}
+
+#content {
+  @include makeColumn(9);
+}

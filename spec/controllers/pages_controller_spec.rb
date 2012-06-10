@@ -7,50 +7,50 @@ describe PagesController do
     @base = "| "
   end
 
-  describe "GET 'home'" do
-    it "should be successful" do
-      get 'home'
+  describe "Home page" do
+    it "should visit home page" do
+      visit root_path
       response.should be_success
     end
 
     it "should have a correct title" do
-      get 'home'
+      visit root_path
       response.should have_selector("title", content: "#{@base}Home")
     end
   end
 
-  describe "GET 'contact'" do
-    it "should be successful" do
-      get 'contact'
+  describe "Contact page" do
+    it "should visit contact page" do
+      visit contact_path
       response.should be_success
     end
 
     it "should have a correct title" do
-      get 'contact'
+      visit contact_path
       response.should have_selector("title", content: "#{@base}Contact")
     end
   end
 
-  describe "GET 'about'" do
-    it "should be successful" do
-      get 'about'
+  describe "About page" do
+    it "should visit about page" do
+      visit about_path
       response.should be_success
     end
 
     it "should have a correct title" do
-      get 'about'
+      visit about_path
       response.should have_selector("title", content: "#{@base}About")
     end
     end
 
-  describe "GET 'help'" do
-    it "should be successful" do
-      get 'help'
+  describe "Help page" do
+    it "should visit help page" do
+      visit help_path
       response.should be_success
     end
 
     it "should have a correct title" do
-      get 'help'
+      visit help_path
       response.should have_selector("title", content: "#{@base}Help")
     end
   end

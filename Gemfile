@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.3'
-
+gem 'rails', '3.2.5'
+gem 'bootstrap-sass'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -13,6 +13,7 @@ end
 
 group :test do
   gem 'rspec'
+  gem 'capybara'
   gem 'spork'
   gem 'webrat'
 end
