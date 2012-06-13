@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= get_title %></title>
+  <title><%= get_title @title %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -16,5 +15,6 @@
       </div>
     </div>
   </div>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>

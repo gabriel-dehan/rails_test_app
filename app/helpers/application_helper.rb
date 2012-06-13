@@ -1,6 +1,7 @@
 module ApplicationHelper
-  def get_title
+  def get_title overload
     base_title = 'App'
-    ( action_name.nil? ) ? base_title : "#{base_title} | #{action_name.capitalize}"
+    title = overload ? overload : "#{action_name.capitalize}"
+    ( action_name.nil? ) ? base_title : "#{base_title} | #{title}"
   end
 end

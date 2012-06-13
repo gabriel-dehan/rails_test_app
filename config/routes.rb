@@ -1,5 +1,9 @@
 RailsTestApp::Application.routes.draw do
   root to: 'pages#home'
+
+  get   'users/new'
+  match '/register', to: 'users#new'
+
   match '/about',   to: 'pages#about'
   match '/contact', to: 'pages#contact'
   match '/help',    to: 'pages#help'

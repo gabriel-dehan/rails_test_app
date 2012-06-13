@@ -9,13 +9,16 @@ gem 'sqlite3'
 
 group :development do
   gem 'rspec-rails'
+  gem 'guard-rspec'
 end
 
 group :test do
-  gem 'rspec'
+  gem 'rspec-rails'
   gem 'capybara'
-  gem 'spork'
   gem 'webrat'
+  gem 'rb-fsevent', :require => false
+  gem 'growl'
+  gem 'spork'
 end
 
 # Gems used only for assets and not required
