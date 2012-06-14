@@ -5,9 +5,15 @@ describe "User Pages" do
       @base = "| "
   end
 
+  shared_examples_for "all user pages" do
+    it { response.should have_selector('title', content: "App #{@base}#{page_title}")}
+  end
+
   describe "register page" do
     before { visit register_path }
 
-    it { response.should have_selector('title', content: "App #{@base}Register") }
+    let(:page_title) { 'Register' }
+
+    it_should_behave_like "all user pages"
   end
 end
