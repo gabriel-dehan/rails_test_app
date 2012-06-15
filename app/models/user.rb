@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password_digest, :password, :password_confirmation
   has_secure_password
 
-  before_save { |user| user.email.downcase! }
+  before_save { self.email.downcase! }
 
   VALID_EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?:[A-Z]{2}|com|org|net|edu|gov|gouv|mil|biz|info|mobi|name|aero|asia|jobs|museum)$/i
 
