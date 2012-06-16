@@ -17,7 +17,8 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'webrat'
+  gem 'factory_girl_rails'
+  #gem 'webrat'
   gem 'rb-fsevent', :require => false
   gem 'growl'
   gem 'spork'

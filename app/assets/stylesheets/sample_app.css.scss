@@ -9,5 +9,9 @@ body {
 }
 
 #content {
-  @include makeColumn(9);
+  @include makeColumn(12);
+}
+
+.debug {
+  @include makeColumn(12)
 }

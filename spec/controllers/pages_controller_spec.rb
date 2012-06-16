@@ -8,7 +8,7 @@ describe PagesController do
   end
 
   describe "GET 'home'" do
-    before { get 'home' }
+    before { visit root_path }
 
     it "should be successful" do
       response.should be_success
@@ -20,37 +20,34 @@ describe PagesController do
   end
 
   describe "GET 'contact'" do
+    before { visit contact_path }
     it "should be successful" do
-      get 'contact'
       response.should be_success
     end
 
     it "should have a correct title" do
-      get 'contact'
       response.should have_selector("title", content: "#{@base}Contact")
     end
   end
 
   describe "GET 'about'" do
+    before { visit about_path }
     it "should be successful" do
-      get 'about'
       response.should be_success
     end
 
     it "should have a correct title" do
-      get 'about'
       response.should have_selector("title", content: "#{@base}About")
     end
     end
 
   describe "GET 'help'" do
+    before { visit help_path }
     it "should be successful" do
-      get 'help'
       response.should be_success
     end
 
     it "should have a correct title" do
-      get 'help'
       response.should have_selector("title", content: "#{@base}Help")
     end
   end
