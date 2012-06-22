@@ -10,6 +10,7 @@
   <%=	render 'layouts/sidebar' %>
   <div class="container-fluid">
     <div id="content">
+      <%= render 'shared/flash_messages' %>
       <div class="hero-unit">
         <%= yield %>
       </div>

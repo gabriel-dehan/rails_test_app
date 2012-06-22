@@ -1,5 +1,7 @@
 require 'rubygems'
 require 'spork'
+require 'capybara/rspec'
+include Capybara::DSL
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -12,6 +14,11 @@ Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
+
+  if ENV["RUBYMINE"]
+    $:.unshift(File.expand_path("rb/testing/patch/common", ENV["RUBYMINE"]))
+    $:.unshift(File.expand_path("rb/testing/patch/bdd", ENV["RUBYMINE"]))
+  end
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
