@@ -1,9 +1,14 @@
 RailsTestApp::Application.routes.draw do
   root to: 'pages#home'
 
-  get   'users/new'
+  # Users
+  resources :users, :except => [:show]
+  # We want a peculiar URL for users#show
+  match '/profile/:id', to: 'users#show', as: 'profile'
+
   match '/register', to: 'users#new'
 
+  # Pages
   match '/about',   to: 'pages#about'
   match '/contact', to: 'pages#contact'
   match '/help',    to: 'pages#help'
