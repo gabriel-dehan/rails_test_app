@@ -6,7 +6,7 @@ describe "User Pages" do
   end
 
   shared_examples_for "all user pages" do
-    it { page.should have_selector('title', content: "App #{@base}#{page_title}")}
+    it { page.should have_selector('title', content: "App | #{page_title}")}
   end
 
   describe "register page" do

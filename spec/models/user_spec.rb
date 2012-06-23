@@ -25,6 +25,7 @@ describe User do
   it 'should have a password digest'       do should respond_to :password_digest end
   it 'should have a password'              do should respond_to :password end
   it 'should have a password confirmation' do should respond_to :password_confirmation end
+  it 'should have a rememberance token'     do should respond_to :remember_token end
 
   it 'should be able to authenticate'     do should respond_to :authenticate end
 
@@ -116,5 +117,10 @@ describe User do
       let( :user_with_invalid_password ) { found_user.authenticate( 'invalid' ) }
       specify { user_with_invalid_password.should be_false }
     end
+  end
+
+  describe 'remember token' do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
   end
 end

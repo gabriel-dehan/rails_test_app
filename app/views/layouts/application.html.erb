@@ -6,17 +6,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%=	render 'layouts/header' %>
+<%=	render 'layouts/header' %>
   <%=	render 'layouts/sidebar' %>
   <div class="container-fluid">
     <div id="content">
+      <%= render 'shared/flash_messages' %>
       <div class="hero-unit">
         <%= yield %>
       </div>
     </div>
     <% if Rails.env.development? then %>
       <div class="debug">
-        <%= debug(params) %> 
+        <%= debug(params) %>
+        <%= debug(cookies) %>
       </div>
     <% end %>
   </div>
