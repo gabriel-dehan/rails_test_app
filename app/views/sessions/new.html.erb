@@ -1,0 +1,12 @@
+<h1>Login</h1>
+<div class="login">
+  <%= form_for :session, url: sessions_path do |form| %>
+
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+    
+    <%= form.submit 'Login', class: 'btn btn-large' %>
+  <% end %>
+</div>

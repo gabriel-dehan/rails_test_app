@@ -6,7 +6,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%=	render 'layouts/header' %>
+<%=	render 'layouts/header' %>
   <%=	render 'layouts/sidebar' %>
   <div class="container-fluid">
     <div id="content">
@@ -17,7 +17,8 @@
     </div>
     <% if Rails.env.development? then %>
       <div class="debug">
-        <%= debug(params) %> 
+        <%= debug(params) %>
+        <%= debug(cookies) %>
       </div>
     <% end %>
   </div>

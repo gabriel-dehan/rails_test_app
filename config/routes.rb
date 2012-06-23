@@ -5,8 +5,12 @@ RailsTestApp::Application.routes.draw do
   resources :users, :except => [:show]
   # We want a peculiar URL for users#show
   match '/profile/:id', to: 'users#show', as: 'profile'
+  match '/register',    to: 'users#new'
 
-  match '/register', to: 'users#new'
+  # Sessions
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/login',  to: 'sessions#new'
+  match '/logout', to: 'sessions#destroy', via: :delete
 
   # Pages
   match '/about',   to: 'pages#about'

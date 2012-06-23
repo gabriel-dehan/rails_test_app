@@ -7,7 +7,7 @@ describe 'Layout' do
 
   describe 'Header' do
     it 'should have the right links' do
-      click_link 'Sign-up'
+      click_link 'Register'
       page.should have_selector 'title', content:'Register'
       click_link 'Home'
       page.should have_selector 'title', content:'Home'
