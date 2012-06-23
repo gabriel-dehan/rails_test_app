@@ -1,12 +1,12 @@
 <h1>Login</h1>
 <div class="login">
-  <%= form_for :session, url: sessions_path do |form| %>
+  <%= form_tag sessions_path do %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email, params[:email] %>
 
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
     
-    <%= form.submit 'Login', class: 'btn btn-large' %>
+    <%= submit_tag 'Login', class: 'btn btn-large' %>
   <% end %>
 </div>
